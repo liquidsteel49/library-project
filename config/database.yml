@@ -1,4 +1,4 @@
-<% project_name = 'rails-library' %>
+<% project_name = 'library-project' %>
 
 default: &default
   adapter: postgresql
