@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_26_183451) do
+ActiveRecord::Schema.define(version: 2018_11_26_232953) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -37,12 +37,37 @@ ActiveRecord::Schema.define(version: 2018_11_26_183451) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "comics", force: :cascade do |t|
+    t.boolean "user_owns"
+    t.boolean "lent"
+    t.string "title"
+    t.bigint "writer_id"
+    t.bigint "illustrator_id"
+    t.boolean "series"
+    t.integer "issue"
+    t.integer "current"
+    t.boolean "ongoing"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["illustrator_id"], name: "index_comics_on_illustrator_id"
+    t.index ["writer_id"], name: "index_comics_on_writer_id"
+  end
+
   create_table "examples", force: :cascade do |t|
     t.text "text", null: false
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_examples_on_user_id"
+  end
+
+  create_table "illustrators", force: :cascade do |t|
+    t.string "first_name"
+    t.string "last_name"
+    t.string "pen_name"
+    t.string "known_for"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|
@@ -55,6 +80,17 @@ ActiveRecord::Schema.define(version: 2018_11_26_183451) do
     t.index ["token"], name: "index_users_on_token", unique: true
   end
 
+  create_table "writers", force: :cascade do |t|
+    t.string "first_name"
+    t.string "last_name"
+    t.string "pen_name"
+    t.string "known_for"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   add_foreign_key "books", "authors"
+  add_foreign_key "comics", "illustrators"
+  add_foreign_key "comics", "writers"
   add_foreign_key "examples", "users"
 end
