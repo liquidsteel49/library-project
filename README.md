@@ -1,8 +1,5 @@
-The purpose behind this program is to keep track of my comics. I want to know
-which comics I own and which have been lent out. I want to have comic, writer, and illustrator tables. There should be an attribute in both writer and illustrator tables called "best_known_work". The comic tables should have an attribute with a synopsis and an attribute with genre. User should have CRUD capabilities.
+Realized that my V1 was much too ambitious. Going to keep things as minimal as possible. I just want 3 tables. User table, user_owned_comic table, and comic table. A user will be able to log in and see which comic's they own. All comics will be treated as hardcover collections or trade paper backs. No single issue comics are accounted for.
 
-v2 Including books I myself have borrowed from others and who that book was borrowed from.
-I also want to include how many copies I have of a single book. The program will be capable of reporting how
-many books of a series are in my collection and which ones are missing.
+V2 will allow for a seperate writer and illustrator table as parents of the comics table.
 
-v3 Including books I myself have borrowed from others and who that book was borrowed from. I will include in my library a wish list.
+V3 will keep track of which comics the user has sent and to whom. Will keep track of what format the comic is in (i.e. omnibus, hardcover, trade paper back, single issue)
