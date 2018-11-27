@@ -1,2 +1,0 @@
-class Illustrator < ApplicationRecord
-end
