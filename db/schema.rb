@@ -10,12 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_27_203527) do
+ActiveRecord::Schema.define(version: 2018_11_27_211436) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "comics", force: :cascade do |t|
+    t.string "title"
+    t.string "writer"
+    t.string "illustrator"
+    t.boolean "is_series"
+    t.integer "issue_number"
+    t.integer "series_total_issue"
+    t.boolean "ongoing"
+    t.string "genre"
+    t.text "synopsis"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

@@ -46,6 +46,6 @@ class ComicsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def comic_params
-      params.require(:comic).permit(:title, :writer, :illustrator, :is_series, :issue_number, :series_total_issue, :ongoing, :genre, :synopsis)
+      params.fetch(:comic, {})
     end
 end
