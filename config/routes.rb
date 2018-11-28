@@ -2,7 +2,7 @@
 
 Rails.application.routes.draw do
   resources :my_comics
-  resources :comics
+  resources :comics, except: %i[new edit]
   # RESTful routes
   resources :examples, except: %i[new edit]
 
