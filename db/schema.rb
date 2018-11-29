@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(version: 2018_11_27_211436) do
   enable_extension "plpgsql"
 
   create_table "comics", force: :cascade do |t|
-    t.string "title"
+    t.string "title", null: false
     t.string "writer"
     t.string "illustrator"
     t.boolean "is_series"

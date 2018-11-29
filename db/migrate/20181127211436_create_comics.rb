@@ -1,7 +1,7 @@
 class CreateComics < ActiveRecord::Migration[5.2]
   def change
     create_table :comics do |t|
-      t.string :title
+      t.string :title, null: false
       t.string :writer
       t.string :illustrator
       t.boolean :is_series
