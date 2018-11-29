@@ -1,4 +1,4 @@
-Realized that my V1 was much too ambitious. Going to keep things as minimal as possible. I just want 3 tables. User table, user_owned_comic table, and comic table. A user will be able to log in and see which comic's they own. All comics will be treated as hardcover collections or trade paper backs. No single issue comics are accounted for.
+Realized that my V1 was much too ambitious. Going to keep things as minimal as possible. I just want 2 tables. User table and comic table. A user will be able to log in and see which comic's they own. All comics will be treated as hardcover collections or trade paper backs. No single issue comics are accounted for.
 
 V2 will allow for a seperate writer and illustrator table as parents of the comics table.
 
