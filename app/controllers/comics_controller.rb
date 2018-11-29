@@ -38,14 +38,15 @@ class ComicsController < ApplicationController
     @comic.destroy
   end
 
-  private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_comic
-      @comic = Comic.find(params[:id])
-    end
+private
+  # Use callbacks to share common setup or constraints between actions.
+  def set_comic
+    @comic = Comic.find(params[:id])
+  end
 
-    # Only allow a trusted parameter "white list" through.
-    def comic_params
-      params.fetch(:comic, {})
-    end
+  # Only allow a trusted parameter "white list" through.
+  # getting rid of `.fetch(comic, {})` in favor of require and permit methods
+  def comic_params
+    params.require(:comic).permit(:title, :writer, :illustrator, :is_series, :issue_number, :series_total_issue, :ongoing, :genre, :synopsis)
+  end
 end
