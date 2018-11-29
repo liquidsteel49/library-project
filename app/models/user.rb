@@ -2,5 +2,5 @@
 
 class User < ApplicationRecord
   include Authentication
-  has_many :my_comics
+  has_many :comics
 end

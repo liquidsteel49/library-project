@@ -1,3 +1,3 @@
 class Comic < ApplicationRecord
-  has_many :my_comics
+  belongs_to :user
 end
