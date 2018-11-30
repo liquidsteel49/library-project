@@ -15,7 +15,7 @@ class ComicsController < ProtectedController
 
   # POST /comics
   def create
-    @comic = Comic.new(comic_params)
+    @comic = current_user.comics.new(comic_params)
 
     if @comic.save
       render json: @comic, status: :created, location: @comic
