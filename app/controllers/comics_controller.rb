@@ -15,6 +15,7 @@ class ComicsController < ProtectedController
 
   # POST /comics
   def create
+    # current_user is definited in application_controller.rb lines 23 - 36
     @comic = current_user.comics.new(comic_params)
 
     if @comic.save
