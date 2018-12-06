@@ -27,6 +27,9 @@ class ComicsController < ProtectedController
 
   # PATCH/PUT /comics/1
   def update
+    # added in hopes of solving update problem
+    # @comic = current_user.comics(comic_params)
+
     if @comic.update(comic_params)
       render json: @comic
     else
